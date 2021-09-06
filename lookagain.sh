@@ -1,1 +1,1 @@
-find . -name '*.sh' | cut -n | sort -nr
+cut -n . -name '*.sh'| sort -nr

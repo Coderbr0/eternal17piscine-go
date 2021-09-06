@@ -1,1 +1,1 @@
-ls -A -m -I '.*' -t -p
+ls -A -m -I '.*' -t -p | tr -d " "

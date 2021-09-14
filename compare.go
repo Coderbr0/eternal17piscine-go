@@ -3,16 +3,18 @@ package piscine
 func Compare(a, b string) int {
 	x := []byte(a)
 	y := []byte(b)
-	for indexa := range x {
-		for index := range y {
-			if x[indexa] > y[index] || x[indexa] == y[index] && len(a) > len(b) {
-				return 1
-			} else if x[indexa] < y[index] || x[indexa] == y[index] && len(b) > len(a) {
+
+	for i := range a {
+		for j := range b {
+			if x[i] < y[j] {
 				return -1
-			} else {
-				return 0
+			} else if x[i] > y[j] {
+				return 1
+			} else if x[i] == y[j] && len(x) != len(y) {
+				x[i] = x[i+1]
+				y[j] = y[j+1]
 			}
 		}
 	}
-	return 100
+	return 0
 }

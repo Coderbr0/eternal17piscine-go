@@ -18,19 +18,11 @@ package piscine
 // }
 
 func Compare(a, b string) int {
-	x := []byte(a)
-	y := []byte(b)
 	if a == b {
 		return 0
+	} else if a < b {
+		return -1
+	} else {
+		return 1
 	}
-	for i := range x {
-		for j := range y {
-			if x[i] < y[j] || x[i+1] < y[j+1] {
-				return -1
-			} else {
-				return 1
-			}
-		}
-	}
-	return 0
 }

@@ -2,7 +2,7 @@ package piscine
 
 func Index(s string, toFind string) int {
 	if s == "" || toFind == "" {
-		return -1
+		return 0
 	}
 	for i := range s {
 		if s[i] == toFind[0] {

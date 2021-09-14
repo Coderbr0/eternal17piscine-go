@@ -1,16 +1,15 @@
 package piscine
 
 func Index(s string, toFind string) int {
-	if s == "" || toFind == "" {
-		return 0
-	}
+	sRune := []rune(s)
+	tfRune := []rune(toFind)
 	firstIndex := -1
-	for i := 0; i < len(s); i++ {
-		if []rune(s)[i] == []rune(toFind)[0] {
+	for i := 0; i < len(sRune); i++ {
+		if sRune[i] == tfRune[0] {
 			firstIndex = i
-			tempString := s[i : i+len([]rune(toFind))]
+			tempString := sRune[i : i+len(tfRune)]
 
-			if tempString == toFind {
+			if string(tempString) == string(toFind) {
 				return firstIndex
 			}
 		}

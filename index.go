@@ -6,9 +6,9 @@ func Index(s string, toFind string) int {
 	}
 	firstIndex := -1
 	for i := range s {
-		if s[i] == toFind[0] {
+		if []rune(s)[i] == []rune(toFind)[0] {
 			firstIndex = i
-			tempString := s[i : i+len(toFind)]
+			tempString := s[i : i+len([]rune(toFind))]
 
 			if tempString == toFind {
 				return firstIndex

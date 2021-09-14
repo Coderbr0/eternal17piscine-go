@@ -5,7 +5,7 @@ func Index(s string, toFind string) int {
 		return 0
 	}
 	firstIndex := -1
-	for i := range s {
+	for i := 0; i < len(s); i++ {
 		if []rune(s)[i] == []rune(toFind)[0] {
 			firstIndex = i
 			tempString := s[i : i+len([]rune(toFind))]

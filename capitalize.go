@@ -3,10 +3,10 @@ package piscine
 func Capitalize(s string) string {
 	sRune := []rune(s)
 
-	//used for first char of the word in a string
+	// used for first char of the word in a string
 	c1 := true
 
-	//checking if rune and first char of word, to capitalize
+	// checking if rune and first char of word, to capitalize
 	for i := range sRune {
 		if IsRune(sRune[i]) == true && c1 {
 			if 'a' <= sRune[i] && sRune[i] <= 'z' {
@@ -24,7 +24,7 @@ func Capitalize(s string) string {
 	return string(sRune)
 }
 
-//function to check if character is a rune, returns boolean
+// function to check if character is a rune, returns boolean
 func IsRune(c rune) bool {
 	if ('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z') || ('0' <= c && c <= '9') {
 		return true

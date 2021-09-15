@@ -1,33 +1,33 @@
 package piscine
 
-func ToLowerCase(s string) string {
-	a := []byte(s)
-	var low []byte
-	for _, number := range a {
-		if 65 <= number && number <= 90 {
-			number = number + 32
-			low = append(low, number)
-		} else {
-			low = append(low, number)
-		}
-	}
-	return string(low)
-}
-
 func Capitalize(s string) string {
-	lower := ToLowerCase(s)
-	lb := []byte(lower)
-	var capString []byte
-	for _, c := range lb {
-		// if first char is non alpha, change next alpha to upper
-		if 97 <= c && c <= 122 {
-			c = c - 32
-			capString = append(capString, c)
-		} else {
-			capString = append(capString, c)
+	sRune := []rune(s)
+
+	//used for first char of the word in a string
+	c1 := true
+
+	//checking if rune and first char of word, to capitalize
+	for i := range sRune {
+		if IsRune(sRune[i]) == true && c1 {
+			if 'a' <= sRune[i] && sRune[i] <= 'z' {
+				sRune[i] -= 32
+			}
+			// rest of the characters in the each word in the string, if capital, make lowercase.
+			c1 = false
+		} else if 'A' <= sRune[i] && sRune[i] <= 'Z' {
+			sRune[i] += 32
+			// finally if not rune i.e if special character, go until first letter
+		} else if IsRune(sRune[i]) == false {
+			c1 = true
 		}
 	}
-	return string(capString)
+	return string(sRune)
 }
 
-// if (20 <= n && n <= 64) || (91 <= n && n <= 96) || (123 <= n && n <= 127)
+//function to check if character is a rune, returns boolean
+func IsRune(c rune) bool {
+	if ('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z') || ('0' <= c && c <= '9') {
+		return true
+	}
+	return false
+}

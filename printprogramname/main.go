@@ -14,5 +14,5 @@ func main() {
 	for i := range nRune {
 		z01.PrintRune(nRune[i])
 	}
-	z01.PrintRune('\n')
+	// z01.PrintRune('\n')
 }

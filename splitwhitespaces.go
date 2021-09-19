@@ -1,7 +1,6 @@
 package piscine
 
 func SplitWhiteSpaces(s string) []string {
-
 	// starts from 1 to account for the extra word after spaces are counted
 	wordCount := 1
 
@@ -39,7 +38,5 @@ func SplitWhiteSpaces(s string) []string {
 
 //  checks if the char or rune is a seperator
 func WhiteSpace(a rune) bool {
-
 	return a == '\n' || a == ' ' || a == '\t'
-
 }

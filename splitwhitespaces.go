@@ -2,32 +2,34 @@ package piscine
 
 func SplitWhiteSpaces(s string) []string {
 	// accounts for an empty string
-	wordCount := 1
+	wordCount := 0
 	word := ""
 
-	for _, ch := range s {
-		if WhiteSpace(ch) {
+	// only count words after a seperator, if next is not seperator
+	for i, ch := range s {
+		if ch == ' ' && s[i+1] != ' ' {
 			wordCount++
 		}
 	}
 
-	finalString := make([]string, wordCount)
+	finalString := make([]string, wordCount+1)
 	stringIndex := 0
 
 	// adding chars to final string
-	for i, ch := range s {
-		if i+1 == len(s) {
-			finalString[stringIndex] = word + string(s[i])
-		}
-		// if whitespace add all chars before whitespace and reset word
-		if WhiteSpace(ch) && stringIndex <= wordCount {
-			finalString[stringIndex] = word
-			stringIndex++
-			word = ""
+	for _, ch := range s {
+		if WhiteSpace(ch) {
+			if word != "" {
+				finalString[stringIndex] = word
+				stringIndex++
+				word = ""
+			}
 		} else {
 			// final chars after last seperator
 			word += string(ch)
 		}
+	}
+	if word != "" {
+		finalString[len(finalString)-1] = word
 	}
 	return finalString
 }

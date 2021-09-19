@@ -1,7 +1,7 @@
 package piscine
 
 func SplitWhiteSpaces(s string) []string {
-	//accounts for an empty string
+	// accounts for an empty string
 	wordCount := 1
 	word := ""
 

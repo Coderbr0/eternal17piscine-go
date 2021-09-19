@@ -7,8 +7,8 @@ func SplitWhiteSpaces(s string) []string {
 	// this word will reset to empty after encountering a seperator
 	word := ""
 
-	for _, ch := range s {
-		if WhiteSpace(ch) {
+	for i, ch := range s {
+		if WhiteSpace(ch) && s[i+1] != ' ' {
 			wordCount++
 		}
 	}

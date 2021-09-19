@@ -1,7 +1,7 @@
 package piscine
 
 func SplitWhiteSpaces(s string) []string {
-	// starts from 1 to account for the extra word after spaces are counted
+	// accounting for extra word after seperator
 	wordCount := 1
 
 	// this word will reset to empty after encountering a seperator
@@ -18,20 +18,21 @@ func SplitWhiteSpaces(s string) []string {
 
 	// adding words to final string after every seperator, and resetting word to empty.
 	for _, ch := range s {
-		if WhiteSpace(ch) && word != "" {
-			finalString[stringIndex] = word
-			stringIndex++
-			word = ""
+		if WhiteSpace(ch) {
+			if word != "" {
+				finalString[stringIndex] = word
+				stringIndex++
+				word = ""
+			}
 			// add the rest of the string to word
 		} else {
 			word += string(ch)
 		}
-
-		// for last word as there may be no seperators after word
-		x := len(finalString)
-		if word != "" {
-			finalString[x-1] = word
-		}
+	}
+	// for last word as there may be no seperators after word
+	x := len(finalString)
+	if word != "" {
+		finalString[x-1] = word
 	}
 	return finalString
 }

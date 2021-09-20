@@ -17,7 +17,7 @@ func main() {
 		fmt.Println("File name missing")
 	} else {
 		content, _ := ioutil.ReadFile("quest8.txt")
-		fmt.Println(string(content))
+		fmt.Printf(string(content))
 
 	}
 }

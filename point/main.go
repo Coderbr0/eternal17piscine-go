@@ -1,25 +1,6 @@
-// package piscine
-
-// import "fmt"
-
-// func setPoint(x, y *int) {
-// 	*x = 42
-// 	*y = 21
-// }
-
-// func main() {
-// 	points := &point{}
-
-// 	setPoint(points)
-
-// 	fmt.Printf("x = %d, y = %d\n", points.x, points.y)
-// }
-
 package main
 
-import (
-	"fmt"
-)
+import "github.com/01-edu/z01"
 
 type point struct {
 	x int
@@ -35,6 +16,10 @@ func main() {
 	points := &point{}
 
 	setPoint(points)
+	s := "x = 42, y = 21"
 
-	fmt.Printf("x = %d, y = %d\n", points.x, points.y)
+	for i := range s {
+		z01.PrintRune(rune(s[i]))
+	}
+	z01.PrintRune('\n')
 }

@@ -23,6 +23,7 @@ func Convert(nb int) {
 	}
 	z01.PrintRune(runeNum)
 }
+
 func PrintNbr(n int) {
 	if n < 0 {
 		z01.PrintRune('-')

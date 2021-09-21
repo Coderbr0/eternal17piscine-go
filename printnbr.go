@@ -5,11 +5,6 @@ import "github.com/01-edu/z01"
 func Convert(nb int) {
 	runeNum := '0'
 
-	// accounting for int 0
-	if nb == 0 {
-		z01.PrintRune(runeNum)
-	}
-
 	for i := 1; i <= nb%10; i++ {
 		runeNum++
 	}

@@ -1,7 +1,6 @@
 package piscine
 
 func IsSorted(f func(a, b int) int, a []int) bool {
-
 	sortup := true
 	sortdown := true
 	for i := 0; i < len(a)-1; i++ {

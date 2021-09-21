@@ -9,5 +9,5 @@ func IsNegative(nb int) {
 		z01.PrintRune('F')
 	}
 	// print new line after every loop
-	z01.PrintRune(' ')
+	z01.PrintRune('\n')
 }

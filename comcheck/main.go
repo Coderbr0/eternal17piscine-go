@@ -15,6 +15,5 @@ func main() {
 	}
 	for i := 1; i <= count; i++ {
 		fmt.Println("Alert!!!")
-
 	}
 }

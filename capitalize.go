@@ -1,32 +1,34 @@
 package piscine
 
 func Capitalize(s string) string {
-	sRune := []rune(s)
+	// convert string to rune
+	a := []rune(s)
 
-	// used for first char of the word in a string
+	// at first char
 	c1 := true
 
-	// checking if rune and first char of word, to capitalize
-	for i := range sRune {
-		if IsRune(sRune[i]) == true && c1 {
-			if 'a' <= sRune[i] && sRune[i] <= 'z' {
-				sRune[i] -= 32
+	// check if character is alpha numerical & first char of word
+	// if so and lowercase, make capital
+	for i, ch := range a {
+		if AlphaN(a[i]) == true && c1 {
+			if 'a' <= ch && ch <= 'z' {
+				a[i] -= 32
 			}
-			// rest of the characters in the each word in the string, if capital, make lowercase.
+			// for other chars, ie not c1, if capital, lowercase them,
 			c1 = false
-		} else if 'A' <= sRune[i] && sRune[i] <= 'Z' {
-			sRune[i] += 32
-			// finally if not rune i.e if special character, go until first letter
-		} else if IsRune(sRune[i]) == false {
+		} else if 'A' <= ch && ch <= 'Z' {
+			a[i] += 32
+			// if char is not alphanumerical, keep iterating until c1 becomes true
+		} else if AlphaN(a[i]) == false {
 			c1 = true
 		}
 	}
-	return string(sRune)
+	return string(a)
 }
 
-// function to check if character is a rune, returns boolean
-func IsRune(c rune) bool {
-	if ('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z') || ('0' <= c && c <= '9') {
+// checks if rune is an alphanumerical
+func AlphaN(c rune) bool {
+	if 'a' <= c && c <= 'z' || 'A' <= c && c <= 'Z' || '0' <= c && c <= '9' {
 		return true
 	}
 	return false

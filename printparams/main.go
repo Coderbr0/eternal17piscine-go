@@ -8,12 +8,11 @@ import (
 
 func main() {
 	arguments := os.Args
-	// loop over the arguments, convert each one into a rune so we can use printRune
+	// loop over the arguments
 	for i := 1; i <= len(arguments)-1; i++ {
-		runes := []rune(arguments[i])
-		// print each rune followed by a line break
-		for i := range runes {
-			z01.PrintRune(runes[i])
+		// loop over each arguments and print the word, char by char
+		for _, word := range arguments[i] {
+			z01.PrintRune(word)
 		}
 		z01.PrintRune('\n')
 	}

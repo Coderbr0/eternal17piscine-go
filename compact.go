@@ -13,8 +13,8 @@ func Compact(ptr *[]string) int {
 
 	for _, ch := range *ptr {
 		if ch != "" {
-			count++
 			arr[count] = ch
+			count++
 		}
 	}
 	*ptr = arr

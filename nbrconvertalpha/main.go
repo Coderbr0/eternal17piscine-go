@@ -26,7 +26,8 @@ func main() {
 			} else {
 				z01.PrintRune(rune(num + 64))
 			}
-		} else {
+		}
+		if num > 26 {
 			z01.PrintRune(' ')
 		}
 	}

@@ -1,18 +1,14 @@
 package piscine
 
 func Rot14(s string) string {
-	sRune := []rune(s)
-	var changed []rune
+	ar := []rune(s)
 
-	for i, char := range sRune {
-		if char >= 'A' && char <= 'L' || char >= 'a' && char <= 'l' {
-			char = char + 14
-		} else if char >= 'M' && char <= 'Z' || char >= 'm' && char <= 'z' {
-			char = char - 12
-		} else {
-			i++
+	for i, ch := range ar {
+		if 'a' <= ch && ch <= 'l' || 'A' <= ch && ch <= 'L' {
+			ar[i] += 14
+		} else if 'm' <= ch && ch <= 'z' || 'M' <= ch && ch <= 'Z' {
+			ar[i] -= 12
 		}
-		changed = append(changed, char)
 	}
-	return string(changed)
+	return string(ar)
 }

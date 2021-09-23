@@ -4,7 +4,7 @@ func Index(s string, toFind string) int {
 	var firstIndex int
 
 	if toFind == "" {
-		return -1
+		return 0
 	}
 	for i := 0; i < len(s); i++ {
 		if s[i] == toFind[0] {

@@ -31,4 +31,7 @@ func main() {
 			z01.PrintRune(' ')
 		}
 	}
+	if len(args) != 0 {
+		z01.PrintRune('\n')
+	}
 }

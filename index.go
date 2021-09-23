@@ -3,7 +3,7 @@ package piscine
 func Index(s string, toFind string) int {
 	var firstIndex int
 
-	for i := 0; i <= len(s)-1; i++ {
+	for i := range s {
 		if s[i] == toFind[0] {
 			firstIndex = i
 			temp := s[i : i+len(toFind)]
@@ -12,6 +12,5 @@ func Index(s string, toFind string) int {
 			}
 		}
 	}
-
 	return -1
 }

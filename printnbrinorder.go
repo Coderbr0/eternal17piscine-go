@@ -27,5 +27,4 @@ func PrintNbrInOrder(n int) {
 	for i := range numbers {
 		z01.PrintRune(rune('0' + numbers[i]))
 	}
-
 }
